@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using OpenMod.API.Users;
 using OpenMod.Games.Abstractions.Player;
 using OpenMod.Unturned.Users;
-using Vector3 = UnityEngine.Vector3;
+using UnityVec = UnityEngine.Vector3;
 
 namespace OpenMod.Unturned.Player
 {
@@ -12,16 +12,16 @@ namespace OpenMod.Unturned.Player
         /// <inheritdoc />
         public IUser User { get; }
 
-        private UnturnedUser _untUsr => (UnturnedUser) User;
+        private UnturnedUser m_UntUsr => (UnturnedUser) User;
  
         /// <inheritdoc />
         public float Health
         {
-            get => _untUsr.Player.life.health;
-            set => _untUsr.Player.life.tellHealth(_untUsr.SteamId, (byte) value);
+            get => m_UntUsr.Player.life.health;
+            set => m_UntUsr.Player.life.tellHealth(m_UntUsr.SteamId, (byte) value);
         }
         
         public async Task TeleportAsync(Vector3 location) =>
-            _untUsr.Player.teleportToLocation(new Vector3(location.x, location.y, location.z), _untUsr.Player.look.yaw);
+            m_UntUsr.Player.teleportToLocation(new UnityVec(location.X, location.Y, location.Z), m_UntUsr.Player.look.yaw);
     }
 }
