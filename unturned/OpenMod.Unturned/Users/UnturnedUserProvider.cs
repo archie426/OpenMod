@@ -65,7 +65,7 @@ namespace OpenMod.Unturned.Users
             });
         }
 
-        public virtual UnturnedUser GetUser(Player player)
+        public virtual UnturnedUser GetUser(SDG.Unturned.Player player)
         {
             return GetUser(player.channel.owner);
         }

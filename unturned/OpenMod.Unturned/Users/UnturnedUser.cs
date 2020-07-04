@@ -16,13 +16,13 @@ namespace OpenMod.Unturned.Users
             get { return SteamId.ToString(); }
         }
 
-        public Player Player { get; }
+        public SDG.Unturned.Player Player { get; }
 
         public SteamPlayer SteamPlayer { get; }
 
         public CSteamID SteamId { get; }
 
-        public UnturnedUser(IUserDataStore userDataStore, Player player, UnturnedPendingUser pending) : base(userDataStore)
+        public UnturnedUser(IUserDataStore userDataStore, SDG.Unturned.Player player, UnturnedPendingUser pending) : base(userDataStore)
         {
             Type = KnownActorTypes.Player;
             Player = player;

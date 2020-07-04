@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\framework\OpenMod.Games.Abstractions\OpenMod.Games.Abstractions.csproj" />
     <ProjectReference Include="..\..\framework\OpenMod.Runtime\OpenMod.Runtime.csproj" />
     <ProjectReference Include="..\..\unityengine\OpenMod.UnityEngine\OpenMod.UnityEngine.csproj" />
   </ItemGroup>
